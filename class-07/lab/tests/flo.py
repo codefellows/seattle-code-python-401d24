@@ -1,6 +1,7 @@
 import builtins
 import difflib
 import sys
+from ten_thousand.game_logic import GameLogic
 
 
 def diff(game_play_func, path="", sample=""):
@@ -57,24 +58,27 @@ def diff(game_play_func, path="", sample=""):
 
         return roll
 
-    # store the "real" print & input so we can restore them later
+    # store the "real" print, input and roll_dice so we can restore them later
     real_print = builtins.print
     real_input = builtins.input
+    real_roll_dice = GameLogic.roll_dice
 
-    # mock the builtin print & input
+    # mock the builtin print & input, and GameLogic's roll_dice
     builtins.print = mock_print
     builtins.input = mock_input
+    GameLogic.roll_dice = mock_roller
 
     try:
-        game_play_func(roller=mock_roller)
+        game_play_func()
     except AssertionError:
         real_print("Simulation failure.")
     except SystemExit:
         real_print("No problem. System exits are allowed in this app.")
 
-    # restore the "real" print and output functions
+    # restore the "real" print, output and roll_dice functions
     builtins.print = real_print
     builtins.input = real_input
+    GameLogic.roll_dice = real_roll_dice
 
     return _find_differences(text, expected_lines)
 
