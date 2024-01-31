@@ -1,5 +1,8 @@
 from caesar_cipher.cipher import encrypt, decrypt, crack
 
+"""
+place in your projects tests folder
+"""
 
 def test_encrypt_shift_1():
     actual = encrypt("apple", 1)
