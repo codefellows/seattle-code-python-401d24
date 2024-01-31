@@ -1,23 +1,20 @@
 import random
 
-# chars = ['0'...'9']
-
-
-def encrypt(plain, key):
+def encrypt(plain, shift):
     encrypted_text = ""
 
-    # 1234 -> 2345 with key of 1
+    # 1234 -> 2345 with shift of 1
 
     for char in plain:
         num = int(char)
-        shifted_num = (num + key) % 10
+        shifted_num = (num + shift) % 10
         encrypted_text += str(shifted_num)
 
     return encrypted_text
 
 
-def decrypt(encoded, key):
-    return encrypt(encoded, -key)
+def decrypt(encoded, shift):
+    return encrypt(encoded, -shift)
 
 
 if __name__ == "__main__":
@@ -29,9 +26,10 @@ if __name__ == "__main__":
     ]
 
     for pin in pins:
-        key = random.randint(1, 9)
+        shift = random.randint(1, 9)
         print("plain pin", pin)
-        encrypted_pin = encrypt(pin, key)
+        encrypted_pin = encrypt(pin, shift)
+        print("shift by", shift)
         print("encrypted_pin", encrypted_pin)
-        decrypted_pin = decrypt(encrypted_pin, key)
+        decrypted_pin = decrypt(encrypted_pin, shift)
         print("decrypted_pin", decrypted_pin)
