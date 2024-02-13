@@ -1,0 +1,27 @@
+{% load compress %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  {% compress css %}
+    <link rel="stylesheet" href="{% static 'src/output.css' %}">
+  {% endcompress %}
+</head>
+<body>
+  <header class="bg-green-300 px-2 py-8">
+    <nav class="flex space-x-4 items-center">
+      <a class="text-4xl" href="{% url 'thing_list' %}">Things Rater</a>
+      <a href="somesite.com">Some site</a>
+      <a href="othersite.com">Other site</a>
+    </nav>
+  </header>
+  <main>
+    {% block content %}
+    {% endblock content %}
+  </main>
+</body>
+</html>
