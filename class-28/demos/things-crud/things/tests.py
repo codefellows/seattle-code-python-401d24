@@ -11,10 +11,7 @@ class ThingTests(TestCase):
             username="tester", email="tester@email.com", password="pass"
         )
 
-        self.thing = Thing.objects.create(
-            name="pickle", rating=1, reviewer=self.user, description="pickle description",
-            image_url="http://pickel-image-url.com", reference_url="http://pickel-reference-url.com"
-        )
+        self.thing = Thing.objects.create(name="pickle", rating=1, reviewer=self.user)
 
     def test_string_representation(self):
         self.assertEqual(str(self.thing), "pickle")
@@ -45,7 +42,8 @@ class ThingTests(TestCase):
                 "name": "Rake",
                 "rating": 2,
                 "reviewer": self.user.id,
-            }, follow=True
+            },
+            follow=True,
         )
 
         self.assertRedirects(response, reverse("thing_detail", args="2"))
@@ -54,20 +52,20 @@ class ThingTests(TestCase):
     def test_thing_update_view_redirect(self):
         response = self.client.post(
             reverse("thing_update", args="1"),
-            {"name": "Updated name", "rating": 3, "reviewer": self.user.id, "description": "test description",
-             "image_url": "testimageurl.com", "reference_url": "testreferenceurl.com"}
+            {"name": "Updated name", "rating": 3, "reviewer": self.user.id},
         )
 
-        self.assertRedirects(response, reverse("thing_detail", args="1"), target_status_code=200)
+        self.assertRedirects(
+            response, reverse("thing_detail", args="1"), target_status_code=200
+        )
 
     def test_thing_update_bad_url(self):
         response = self.client.post(
-            reverse("thing_update", args="1"),
-            {"name": "Updated name", "rating": 3, "reviewer": self.user.id, "description": "test description",
-             "image_url": "badurl", "reference_url": "testreferenceurl.com"}
+            reverse("thing_update", args="9"),
+            {"name": "Updated name", "rating": 3, "reviewer": self.user.id},
         )
 
-        self.assertEqual(response.status_code, 200)
+        self.assertEqual(response.status_code, 404)
 
     def test_thing_delete_view(self):
         response = self.client.get(reverse("thing_delete", args="1"))

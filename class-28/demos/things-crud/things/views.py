@@ -1,5 +1,12 @@
-from django.views.generic import ListView, DetailView, UpdateView, CreateView, DeleteView
+from django.views.generic import (
+    ListView,
+    DetailView,
+    CreateView,
+    DeleteView,
+    UpdateView,
+)
 from django.urls import reverse_lazy
+
 from .models import Thing
 
 
@@ -14,16 +21,16 @@ class ThingDetailView(DetailView):
     model = Thing
 
 
+class ThingCreateView(CreateView):
+    template_name = "thing_create.html"
+    model = Thing
+    fields = "name", "reviewer", "rating"
+
+
 class ThingUpdateView(UpdateView):
     template_name = "thing_update.html"
     model = Thing
     fields = "__all__"
-
-
-class ThingCreateView(CreateView):
-    template_name = "thing_create.html"
-    model = Thing
-    fields = ["name", "rating", "reviewer"] # "__all__" for all of them
 
 
 class ThingDeleteView(DeleteView):
