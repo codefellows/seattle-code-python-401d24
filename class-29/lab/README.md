@@ -9,9 +9,9 @@ One of the first things many developers choose to do is to create a custom user 
 ## Feature Tasks and Requirements
 
 - create Django application `django-custom-user` from scratch that has a custom user model named `CustomUser`
-- Custom user should use *email* instead of *username* for signup / login
 - Application should work with Django Admin
 - Use the very helpful [tutorial](https://learndjango.com/tutorials/django-custom-user-model){:target="_blank"} at [LearnDjango](https://learndjango.com/){:target="_blank"}
+  - But check the `Implementation Notes` below about Django 5 tweak.
 
 ## Implementation Notes
 
@@ -21,8 +21,7 @@ One of the first things many developers choose to do is to create a custom user 
 
 ### User Acceptance Tests
 
-- Verify the creation of a new user with email and password
-- Verify that duplicate emails are not allowed
+- No acceptance tests required.
 
 ## Configuration
 
