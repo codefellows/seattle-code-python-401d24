@@ -19,7 +19,7 @@ One of the first things many developers choose to do is to create a custom user 
 - **WARNING** Django version 5 no longer supports logging out with a GET request.
   - Refer to demo for safe logging out in Django 5.
 
-### User Acceptance Tests
+## User Acceptance Tests
 
 - No acceptance tests required.
 
