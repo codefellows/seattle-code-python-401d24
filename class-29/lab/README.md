@@ -30,4 +30,5 @@ Refer to [Lab Submission Instructions](../../../reference/submission-instruction
 
 ## Stretch
 
-Create a Django application using [DjangoX](https://github.com/wsvincent/djangox){:target="_blank"}
+- Create a Django application using [DjangoX](https://github.com/wsvincent/djangox){:target="_blank"}
+- Style form using [Django Widget Tweaks](https://prettyprinted.com/tutorials/django-widget-tweaks/){:target="_blank"}
