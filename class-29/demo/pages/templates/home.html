@@ -5,6 +5,7 @@
 {% block content %}
 {% if user.is_authenticated %}
   Hi {{ user.username }}!
+  <!-- Logout must be POST request in Django 5 -->
   <form action="{% url 'logout' %}" method="post">
     {% csrf_token %}
     <button type="submit">Log Out</button>
