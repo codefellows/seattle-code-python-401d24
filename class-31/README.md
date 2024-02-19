@@ -30,3 +30,4 @@ Today we'll work on converting a Django app into a proper API then wrap it up in
 - Expose API and allow users to interact with it
 - Reach into a Docker container and modify it
 - Share files between host OS and container
+- Install [Docker Desktop](https://www.docker.com/products/docker-desktop/){:target="_blank"}
