@@ -1,20 +1,18 @@
-from rest_framework import generics
+from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Thing
-from .permissions import IsOwnerOrReadOnly
+from .permissions import IsOwnerOrReadOnly #new
 from .serializers import ThingSerializer
 
-
-class ThingList(generics.ListCreateAPIView):
-
+class ThingList(ListCreateAPIView):
     # Anything that inherits from ListAPI View is going to need 2 things.
     # What is the collection of things, aka the queryset
-    # Serializer_class
     queryset = Thing.objects.all()
-    serializer_class = ThingSerializer
 
+    #serializing
+    serializer_class = ThingSerializer
 
 # The ThingDetail needs the same things
-class ThingDetail(generics.RetrieveUpdateDestroyAPIView):
-    permission_classes = (IsOwnerOrReadOnly,)
+class ThingDetail(RetrieveUpdateDestroyAPIView):
     queryset = Thing.objects.all()
     serializer_class = ThingSerializer
+    permission_classes = (IsOwnerOrReadOnly,) #new
