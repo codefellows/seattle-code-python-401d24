@@ -1,7 +1,7 @@
 from rest_framework.generics import ListCreateAPIView, RetrieveUpdateDestroyAPIView
 from .models import Thing
-from .permissions import IsOwnerOrReadOnly #new
 from .serializers import ThingSerializer
+from .permissions import IsOwnerOrReadOnly
 
 class ThingList(ListCreateAPIView):
     # Anything that inherits from ListAPI View is going to need 2 things.
@@ -15,4 +15,4 @@ class ThingList(ListCreateAPIView):
 class ThingDetail(RetrieveUpdateDestroyAPIView):
     queryset = Thing.objects.all()
     serializer_class = ThingSerializer
-    permission_classes = (IsOwnerOrReadOnly,) #new
+    permission_classes = (IsOwnerOrReadOnly,)
