@@ -8,7 +8,7 @@ class IsOwnerOrReadOnly(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        # if we're allowing the owner to be null in Model
+        # if we're allowing the purchaser to be null in Model
         # then this will check for that case and allow access
         if obj.owner is None:
             return True

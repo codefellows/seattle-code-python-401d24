@@ -1,3 +1,6 @@
+from django.test import TestCase
+
+# Create your tests here.
 from django.contrib.auth import get_user_model
 from django.urls import reverse
 from rest_framework import status
@@ -21,7 +24,6 @@ class ThingTests(APITestCase):
         )
         test_thing.save()
 
-    # class 32
     def setUp(self):
         self.client.login(username="testuser1", password="pass")
 
@@ -81,7 +83,6 @@ class ThingTests(APITestCase):
         things = Thing.objects.all()
         self.assertEqual(len(things), 0)
 
-    # class 32
     def test_authentication_required(self):
         self.client.logout()
         url = reverse("thing_list")
