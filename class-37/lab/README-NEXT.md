@@ -5,7 +5,7 @@ Next.js projects obviously have a different creation/submission flow than Python
 ## Project Creation
 
 - Base project off [Next + Tailwind Template](https://github.com/vercel/next.js/tree/canary/examples/with-tailwindcss)
-- > npx create-next-app@latest --js --no-app
+- > `npx create-next-app@latest --js --no-app`
 - name your project, e.g. your-awesome-project.
 - accept defaults for remaining options.
 - > cd your-awesome-project

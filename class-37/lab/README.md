@@ -21,13 +21,15 @@ Your job is to create a `Cookie Stand Admin` app using [Next.js](https://nextjs.
 ## Implementation Notes
 
 - Initialize Next.js project with the following command.
-> npx create-next-app@latest --js --no-app
+> `npx create-next-app@latest --js --no-app`
 - **NOTE**: there is no need to create a containing folder.
 - Name your project `cookie-stand-admin`
 - Accept defaults for remaining options.
 - Strip out unused files
   - The app won't break if they get left in, but a good practice to remove stuff you're not using.
-- Pro tip: [Tailwind CSS Extension Pack](https://marketplace.visualstudio.com/items?itemName=andrewmcodes.tailwindcss-extension-pack){:target="_blank"}
+- Pro tips:
+  - [Tailwind CSS Extension Pack](https://marketplace.visualstudio.com/items?itemName=andrewmcodes.tailwindcss-extension-pack){:target="_blank"}
+  - [React, Etc. Snippets](https://marketplace.visualstudio.com/items?itemName=dsznajder.es7-react-js-snippets){:target="_blank"}
 
 ### User Acceptance Tests
 
