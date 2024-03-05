@@ -41,6 +41,7 @@ def procrastinate(func):
 
 @procrastinate
 @proclaim
+@emphasize
 def say(txt):
     return txt
 
@@ -50,4 +51,5 @@ def restaurant_suggestion(cuisine):
     return cuisine
 
 if __name__ == "__main__":
-    print(say('spam goes best with eggs.'))
+    print(say('Hunt for Red October'))
+

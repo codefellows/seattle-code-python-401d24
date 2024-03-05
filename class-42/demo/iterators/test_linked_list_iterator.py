@@ -14,6 +14,7 @@ def test_for_in():
     assert foods_list == ["apple","banana","cucumber"]
 
 
+# @pytest.mark.skip("pending")
 def test_list_comprehension():
 
     foods = LinkedList(("apple","banana","cucumber"))
@@ -22,6 +23,7 @@ def test_list_comprehension():
 
     assert cap_foods == ["APPLE","BANANA","CUCUMBER"]
 
+# @pytest.mark.skip("pending")
 def test_list_cast():
 
     food_list = ["apple","banana","cucumber"]
@@ -30,6 +32,8 @@ def test_list_cast():
 
     assert list(foods) == food_list
 
+
+# @pytest.mark.skip("pending")
 def test_range():
 
     num_range = range(1,20+1)
@@ -39,6 +43,8 @@ def test_range():
     assert len(nums) == 20
 
 
+
+# @pytest.mark.skip("pending")
 def test_filter():
 
     nums = LinkedList(range(1,21))
@@ -47,6 +53,8 @@ def test_filter():
 
     assert odds == [1,3,5,7,9,11,13,15,17,19]
 
+
+# @pytest.mark.skip("pending")
 def test_next():
 
     foods = LinkedList(["apple","banana","cucumber"])
@@ -57,6 +65,8 @@ def test_next():
     assert next(iterator) == "banana"
     assert next(iterator) == "cucumber"
 
+
+# @pytest.mark.skip("pending")
 def test_stop_iteration():
 
     foods = LinkedList(["apple","banana","cucumber"])
@@ -67,13 +77,14 @@ def test_stop_iteration():
         while True:
             food = next(iterator)
 
-
+# @pytest.mark.skip("pending")
 def test_str():
     foods = LinkedList(["apple","banana","cucumber"])
     assert str(foods) == "[ apple ] -> [ banana ] -> [ cucumber ] -> None"
 
 # dunder method tests
 
+# @pytest.mark.skip("pending")
 def test_equals():
 
     lla = LinkedList(["apple","banana","cucumber"])
@@ -81,12 +92,14 @@ def test_equals():
 
     assert lla == llb
 
+# @pytest.mark.skip("pending")
 def test_get_item():
 
     foods = LinkedList(["apple","banana","cucumber"])
 
     assert foods[0] == "apple"
 
+# @pytest.mark.skip("pending")
 def test_get_item_out_of_range():
 
     foods = LinkedList(["apple","banana","cucumber"])
